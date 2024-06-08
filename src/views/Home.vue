@@ -12,7 +12,7 @@
                     with a wide range of other programming languages and Technologies.
                 </p>
                 <p>
-                    <a href="src/assets/uploads/Resume_26-05-2024.pdf" class="btn btn-primary resume" download>
+                    <a href="src/assets/uploads/Resume.pdf" class="btn btn-primary resume" download>
                         Download CV
                         <font-awesome-icon icon="fa-solid fa-download" bounce size="1x" />
                     </a>

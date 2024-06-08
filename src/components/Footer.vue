@@ -10,7 +10,7 @@
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                 <li class="mx-2 social-icon">
-                    <a href="https://www.github.com/ceejay" target="_blank" class="text-muted">
+                    <a href="https://www.github.com/ceejayviii" target="_blank" class="text-muted">
                         <font-awesome-icon icon="fa-brands fa-github" size="1x" />
                     </a>
                 </li>
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="mx-2 social-icon">
-                    <a class="text-muted" href="#" title="Youtube">
+                    <a class="text-muted" href="https://www.youtube.com/@ceejayviii" title="Youtube">
                         <font-awesome-icon icon="fa-brands fa-youtube" size="1x" />
                     </a>
                 </li>
