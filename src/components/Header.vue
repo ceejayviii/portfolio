@@ -16,14 +16,6 @@
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/contacts" class="nav-link text-secondary">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                <use xlink:to="#table"></use>
-                            </svg>
-                            Contacts
-                        </RouterLink>
-                    </li>
-                    <li>
                         <RouterLink to="/pricing" class="nav-link text-secondary">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                 <use xlink:to="#grid"></use>

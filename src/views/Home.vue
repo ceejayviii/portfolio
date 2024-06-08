@@ -12,9 +12,9 @@
                     with a wide range of other programming languages and Technologies.
                 </p>
                 <p>
-                    <a href="src/assets/uploads/Resume.pdf" class="btn btn-primary resume" download>
+                    <a href="src/assets/uploads/Resume.pdf" class="btn btn-secondary resume" download>
                         Download CV
-                        <font-awesome-icon icon="fa-solid fa-download" bounce size="1x" />
+                        <font-awesome-icon icon="fa-solid fa-download" shake size="1x" />
                     </a>
                 </p>
             </div>
@@ -25,6 +25,9 @@
         <!-- Project -->
         <div class="divider my-4"></div>
         <Projects />
+        <!-- Contacts -->
+        <div class="divider my-4"></div>
+        <Contacts />
     </div>
     <Footer />
 </template>
@@ -32,9 +35,10 @@
 <script>
 import Typed from 'typed.js';
 // Components
-import Footer from "../components/Footer.vue";
-import Projects from '../components/Projects.vue';
 import Skills from '../components/Skills.vue';
+import Projects from '../components/Projects.vue';
+import Contacts from '../components/Contacts.vue';
+import Footer from "../components/Footer.vue";
 
 export default {
     name: 'Home',
@@ -44,9 +48,10 @@ export default {
     props: {},
 
     components: {
-        Footer,
+        Skills,
         Projects,
-        Skills
+        Contacts,
+        Footer,
     },
 
     created() { },
@@ -86,15 +91,13 @@ export default {
 
 <style scoped>
 .typed-element-container {
-    /* background-color: lightslategrey; */
     padding-inline: 10px;
-    /* color: snow; */
 }
 
 .resume {
-    padding-inline: 10px;
+    padding-inline: 20px;
     box-shadow: gray 5px 5px 8px, ghostwhite -5px -5px 8px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: transparent;
     border: 1px solid transparent;
     color: black;
