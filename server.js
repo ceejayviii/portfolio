@@ -26,9 +26,13 @@ app.get("*", (req, res) => {
 });
 
 // Define your API routes here
+app.get("/api", (req, res) => {
+  console.log("Hello from the server");
+});
+
 
 app.post("/send/email", (req, res) => {
-  const { name, from, message, html } = req.body;
+  const { from, message, html } = req.body;
 
   // Create a transporter object using SMTP transport
   const transporter = nodemailer.createTransport({
@@ -43,7 +47,7 @@ app.post("/send/email", (req, res) => {
   const mailOptions = {
     from, // Sender address
     to: "syavuya08@gmail.com", // List of recipients
-    subject: `Email from ${name}`, // Subject line
+    subject: `Email from ${from}`, // Subject line
     text: message, // Plain text body
     html, // HTML body
   };

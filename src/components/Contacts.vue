@@ -12,10 +12,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="h-100 p-5 border rounded-3">
-                        <form action="" method="post" autocomplete="off">
+                        <form @submit.prevent="SendEmailAsync" autocomplete="off">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="What is your name?"
+                                <label for="from" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="from" placeholder="Enter your e-mail"
                                     aria-autocomplete="off" autocomplete="off">
                             </div>
                             <div class="mb-3">
@@ -37,6 +37,7 @@
 
 <script>
 import { defineComponent } from 'vue';
+import axios from "axios";
 
 export default defineComponent({
     name: 'Contacts',
@@ -54,7 +55,20 @@ export default defineComponent({
 
     mounted() { },
 
-    methods: {},
+    methods: {
+        async SendEmailAsync() {
+            try {
+                const response = await axios.post('http://localhost:3000/send/email', this.formData);
+                if (response.data.error) {
+                    alert('error: ' + response.data.error);
+                } else {
+                    alert('Email sent successfully!');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+    },
 
     computed: {},
 

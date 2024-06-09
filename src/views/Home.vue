@@ -7,9 +7,8 @@
                     <span class="typed-element" ref="typedElement"></span>
                 </p>
                 <p>
-                    Welcome to my portfolio, I am Chagi Siyavuya a Software Developer specializing in C# and I am also
-                    honed
-                    with a wide range of other programming languages and Technologies.
+                    Welcome to my portfolio. I am Chagi Siyavuya, a Software Developer specializing in C# and I am also
+                    proficient in a wide range of other programming languages and Technologies.
                 </p>
                 <p>
                     <a href="src/assets/uploads/Resume.pdf" class="btn btn-secondary resume" download>

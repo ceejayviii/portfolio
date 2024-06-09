@@ -29,7 +29,7 @@
                                 </div>
                                 <a :href="project.previewLink" target="_blank"
                                     :class="['d-flex align-items-center', index % 2 === 0 ? 'ltr' : '']">
-                                    <font-awesome-icon icon="fa-solid fa-link" bounce size="1x" />
+                                    <font-awesome-icon icon="fa-solid fa-link" size="1x" />
                                     Preview Link
                                 </a>
                             </div>
