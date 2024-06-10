@@ -38,8 +38,8 @@
                 </li>
             </ul>
         </footer>
-        <div class="scroll-top">
-            <font-awesome-icon icon="fa-solid fa-arrow-up" shake size="1x" />
+        <div class="scroll-top component-shadow" id="scroll-top-btn" @click="scrollToTop">
+            <font-awesome-icon icon="fa-solid fa-arrow-up" size="1x" />
         </div>
     </div>
 </template>
@@ -48,9 +48,7 @@
 export default {
     name: 'Footer',
     data() {
-        return {
-            currentYear: new Date().getFullYear(),
-        };
+        lastScrollTop: 0
     },
     props: {},
 
@@ -58,11 +56,38 @@ export default {
 
     created() { },
 
-    mounted() { },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
 
-    beforeDestroy() { },
+    methods: {
+        handleScroll() {
+            const scrollTopButton = document.getElementById('scroll-top-btn');
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    methods: {},
+            if (scrollTop > this.lastScrollTop) {
+                // Scrolling down
+                scrollTopButton.style.display = 'none';
+            } else {
+                // Scrolling up
+                if (scrollTop > 100) { // Show button after scrolling down 100px
+                    scrollTopButton.style.display = 'block';
+                } else {
+                    scrollTopButton.style.display = 'none';
+                }
+            }
+            this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    },
 
     computed: {},
 
@@ -113,7 +138,24 @@ li.social-icon:hover a svg.fa-youtube {
 }
 
 .scroll-top {
-    position: absolute;
+    position: fixed;
     right: 1%;
+    bottom: 4%;
+    display: none;
+    /* Initially hidden */
+    cursor: pointer;
+    z-index: 1000;
+    /* Ensure it's above other elements */
+    background-color: #dde1e7;
+    /* Example background color */
+    padding: 10px;
+    /* Example padding */
+    border-radius: 100%;
+    /* Example border radius */
+}
+
+.scroll-top:hover {
+    background-color: #999999;
+    /* Example hover background color */
 }
 </style>
