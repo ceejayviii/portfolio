@@ -11,33 +11,36 @@
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                 <li class="mx-2 social-icon">
                     <a href="https://www.github.com/ceejayviii" target="_blank" class="text-muted">
-                        <font-awesome-icon icon="fa-brands fa-github" size="1x" fade />
+                        <font-awesome-icon icon="fa-brands fa-github" size="1x" beat />
                     </a>
                 </li>
                 <li class="mx-2 social-icon">
                     <a class="text-muted" href="https://www.linkedin.com/in/ceejayviii/" target="_blank"
                         title="LinkedIn">
-                        <font-awesome-icon icon="fa-brands fa-linkedin" size="1x" fade />
+                        <font-awesome-icon icon="fa-brands fa-linkedin" size="1x" beat />
                     </a>
                 </li>
                 <li class="mx-2 social-icon">
                     <a class="text-muted" href="https://www.tiktok.com/@ceejayviii" target="_blank" title="Tiktok">
-                        <font-awesome-icon icon="fa-brands fa-tiktok" size="1x" fade />
+                        <font-awesome-icon icon="fa-brands fa-tiktok" size="1x" beat />
                     </a>
                 </li>
                 <li class="mx-2 social-icon">
                     <a class="text-muted" href="https://www.facebook.com/profile.php?id=61556097299731" target="_blank"
                         title="Facebook">
-                        <font-awesome-icon icon="fa-brands fa-facebook" size="1x" fade />
+                        <font-awesome-icon icon="fa-brands fa-facebook" size="1x" beat />
                     </a>
                 </li>
                 <li class="mx-2 social-icon">
                     <a class="text-muted" href="https://www.youtube.com/@ceejayviii" title="Youtube">
-                        <font-awesome-icon icon="fa-brands fa-youtube" size="1x" fade />
+                        <font-awesome-icon icon="fa-brands fa-youtube" size="1x" beat />
                     </a>
                 </li>
             </ul>
         </footer>
+        <div class="scroll-top">
+            <font-awesome-icon icon="fa-solid fa-arrow-up" shake size="1x" />
+        </div>
     </div>
 </template>
 
@@ -101,5 +104,16 @@ li.social-icon:hover a svg.fa-youtube {
     footer {
         justify-content: center !important;
     }
+}
+
+@media (max-width: 768px) {
+    .scroll-top {
+        display: none;
+    }
+}
+
+.scroll-top {
+    position: absolute;
+    right: 1%;
 }
 </style>

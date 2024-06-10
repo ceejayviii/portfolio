@@ -1,21 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "./views/Home.vue";
-import Dashboard from "./views/Dashboard.vue";
-import ProjectDetails from "./views/ProjectDetails.vue";
-import Pricing from "./views/Pricing.vue";
+import HomeView from "./views/HomeView.vue";
+import DashboardView from "./views/DashboardView.vue";
+import ProjectDetailsView from "./views/ProjectDetailsView.vue";
+import PricingView from "./views/PricingView.vue";
 import NotFound from "./views/NotFound.vue";
 
 const routes = [
-  { path: "/", name: "/", component: Home },
-  { path: "/index", name: "Index", component: Home },
-  { path: "/home", name: "Home", component: Home },
-  { path: "/dashboard", name: "Dashboard", component: Dashboard },
+  { path: "/", name: "/", component: HomeView },
+  { path: "/index", name: "Index", component: HomeView },
+  { path: "/home", name: "Home", component: HomeView },
+  { path: "/dashboard", name: "Dashboard", component: DashboardView },
   {
     path: "/project/details/:id",
     name: "ProjectDetails",
-    component: ProjectDetails,
+    component: ProjectDetailsView,
   },
-  { path: "/pricing", name: "Pricing", component: Pricing },
+  { path: "/pricing", name: "Pricing", component: PricingView },
   // { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
 

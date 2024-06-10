@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: 'Pricing',
+    name: 'PricingView',
     data() {
         return {};
     },

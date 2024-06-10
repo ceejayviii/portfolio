@@ -33,7 +33,7 @@
                                     Preview Link
                                 </a>
                             </div>
-                            <div class="col-auto d-none d-lg-block w-50" :style="setBackgroundImage(project.image)">
+                            <div class="col-auto d-none d-lg-block w-50" :style="SetBackgroundImage(project.image)">
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ export default defineComponent({
     mounted() { },
 
     methods: {
-        setBackgroundImage(url) {
+        SetBackgroundImage(url) {
             return {
                 background: `url(${url})`,
                 'background-size': 'cover',

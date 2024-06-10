@@ -30,7 +30,6 @@ app.get("/api", (req, res) => {
   console.log("Hello from the server");
 });
 
-
 app.post("/send/email", (req, res) => {
   const { from, message, html } = req.body;
 

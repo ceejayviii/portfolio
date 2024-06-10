@@ -40,7 +40,7 @@ import Contacts from '../components/Contacts.vue';
 import Footer from "../components/Footer.vue";
 
 export default {
-    name: 'Home',
+    name: 'HomeView',
     data() {
         return {};
     },

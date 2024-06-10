@@ -12,19 +12,19 @@
                 </div>
                 <div class="col-md-6">
                     <div class="h-100 p-5 border rounded-3">
-                        <form @submit.prevent="SendEmailAsync" autocomplete="off">
+                        <form @submit.prevent="sendEmailAsync()" ref="send_email_form" autocomplete="off">
                             <div class="mb-3">
                                 <label for="from" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="from" placeholder="Enter your e-mail"
-                                    aria-autocomplete="off" autocomplete="off">
+                                    autocomplete="off">
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
                                 <textarea class="form-control" id="message" rows="3"
                                     placeholder="Enter your message..."></textarea>
                             </div>
-                            <button class="btn btn-outline-success" type="submit">
-                                Send Message
+                            <button class="btn btn-outline-success" ref="send_email_btn" type="submit">
+                                <span>Send Message</span>
                                 <font-awesome-icon icon="fa-solid fa-paper-plane" beat size="1x" />
                             </button>
                         </form>
@@ -38,6 +38,18 @@
 <script>
 import { defineComponent } from 'vue';
 import axios from "axios";
+
+
+const loadingEffect = function (btn, text, apply) {
+    if (apply) {
+        btn.disabled = apply;
+        btn.innerHTML = text;
+    } else {
+        btn.disabled = apply;
+        btn.innerHTML = text;
+    }
+}
+
 
 export default defineComponent({
     name: 'Contacts',
@@ -56,16 +68,22 @@ export default defineComponent({
     mounted() { },
 
     methods: {
-        async SendEmailAsync() {
+        async sendEmailAsync() {
+            const btn = this.$refs.send_email_btn;
+            const prevHTMLValue = btn.innerHTML;
             try {
-                const response = await axios.post('http://localhost:3000/send/email', this.formData);
+                this.$refs.send_email_form.querySelectorAll('.form-control').forEach(element => { element.disabled = true });
+                loadingEffect(btn, 'Loading...', true);
+                const response = await axios.post('/send/email', this.formData);
                 if (response.data.error) {
-                    alert('error: ' + response.data.error);
+                    console.log('error: ' + response.data.error);
                 } else {
-                    alert('Email sent successfully!');
+                    console.log('Email sent successfully!');
                 }
             } catch (error) {
-                alert('Error: ' + error.message);
+                this.$refs.send_email_form.querySelectorAll('.form-control').forEach(element => { element.disabled = false });
+                loadingEffect(btn, prevHTMLValue, false);
+                console.log('Error: ' + error.message);
             }
         }
     },
